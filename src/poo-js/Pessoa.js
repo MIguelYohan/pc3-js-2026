@@ -1,11 +1,31 @@
-class Pessoa{
-    constructor(peso, altura){
-        this.peso = peso;
-        this.altura = altura;
-    }
+class Pessoa {
 
-    imc(){
-        return this.peso / (this.altura * this.altura);
+    #nome;
+    #email;
+ 
+    setNome(nome) {
+      if (nome) {
+        this.#nome = nome;
+        return true;
+      } else {
+        return false;
+      }
+    }
+ 
+    getNome() {
+      return this.#nome;
+    }
+ 
+    setEmail(email) {
+      if (email) {
+        this.#email = email;
+        return true;
+      } else {
+        return false;
+      }
+    }
+    getEmail() {
+      return this.#email;
     }
 }
 
