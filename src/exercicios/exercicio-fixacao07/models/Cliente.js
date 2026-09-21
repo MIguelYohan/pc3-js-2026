@@ -1,5 +1,3 @@
-const Animal = require('./Animal.js');
-
 class Cliente{
     #nome;
     #animais = [];
@@ -7,7 +5,7 @@ class Cliente{
 
 
     addAnimal(animal){
-        if(animal instanceof(Animal)){
+        if(animal instanceof Animal){
             this.#animais.push(animal);
             return true;
         }
@@ -42,9 +40,11 @@ class Cliente{
             return true;
         }
         else if(typeof telefone === 'string'){
-            telefone.replace('-', '');
-            telefone.replace('(', '');
-            telefone.replace(')', '');
+            telefone = telefone.trim();
+            telefone = telefone.replaceAll(' ', '');
+            telefone = telefone.replaceAll('-', '');
+            telefone = telefone.replaceAll('(', '');
+            telefone = telefone.replaceAll(')', '');
             this.#telefone = telefone;
             return true;
         }
@@ -59,3 +59,5 @@ class Cliente{
 }
 
 module.exports = Cliente;
+
+const Animal = require('./Animal.js');

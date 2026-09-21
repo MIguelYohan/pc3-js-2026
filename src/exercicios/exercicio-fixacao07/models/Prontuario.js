@@ -1,5 +1,3 @@
-const Animal = require('./Animal.js');
-
 class Prontuario{
     #numero;
     #observacoes;
@@ -34,7 +32,7 @@ class Prontuario{
     }
 
     setAnimal(animal){
-        if (animal instanceof(Animal)){
+        if (animal instanceof Animal){
             this.#animal = animal;
             return true;
         }
@@ -43,3 +41,5 @@ class Prontuario{
 }
 
 module.exports = Prontuario;
+
+const Animal = require('./Animal.js');

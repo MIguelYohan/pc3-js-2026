@@ -1,5 +1,3 @@
-const Animal = require('./Animal.js')
-
 class Veterinario{
     #nome;
     #crmv;
@@ -34,7 +32,7 @@ class Veterinario{
     }
 
     addAnimal(animal){
-        if(animal instanceof(Animal)){
+        if(animal instanceof Animal){
             this.#animais.push(animal);
             if(!animal.getVeterinarios().includes(this)){
                 animal.addVeterinario(this);
@@ -46,3 +44,5 @@ class Veterinario{
 }
 
 module.exports = Veterinario;
+
+const Animal = require('./Animal.js');

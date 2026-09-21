@@ -1,7 +1,3 @@
-const Cliente = require('./Cliente.js');
-const Veterinario = require('./Veterinario.js');
-const Prontuario = require('./Prontuario.js');
-
 class Animal{
     #dono;
     #nome;
@@ -30,7 +26,7 @@ class Animal{
     }
 
     setDono(dono){
-        if(dono instanceof(Cliente)){
+        if(dono instanceof Cliente){
             this.#dono = dono;
             if(!dono.getAnimais().includes(this)){
                 dono.addAnimal(this);
@@ -57,7 +53,7 @@ class Animal{
     }
 
     addVeterinario(veterinario){
-        if (veterianario instanceof(Veterinario)){
+        if (veterinario instanceof Veterinario){
             this.#veterinarios.push(veterinario);
             if(!veterinario.getAnimais().includes(this)){
                 veterinario.addAnimal(this);
@@ -68,7 +64,7 @@ class Animal{
     }
 
     setProntuario(prontuario) {
-        if (prontuario instanceof(Prontuario)){
+        if (prontuario instanceof Prontuario){
             this.#prontuario = prontuario;
             return true;
         }
@@ -77,3 +73,7 @@ class Animal{
 }
 
 module.exports = Animal;
+
+const Cliente = require('./Cliente.js');
+const Veterinario = require('./Veterinario.js');
+const Prontuario = require('./Prontuario.js');
