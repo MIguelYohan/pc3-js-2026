@@ -29,11 +29,33 @@ class Cliente{
 
     setNome(nome) {
         if (typeof nome === 'string') {
-            this.nome = nome;
+            this.#nome = nome;
+            return true;
         }
+        return false;
     }
 
     setTelefone(telefone) {
-        if (typeof )
+        if (typeof telefone === 'number'){
+            telefone = String(telefone);
+            this.#telefone = telefone;
+            return true;
+        }
+        else if(typeof telefone === 'string'){
+            telefone.replace('-', '');
+            telefone.replace('(', '');
+            telefone.replace(')', '');
+            this.#telefone = telefone;
+            return true;
+        }
+        return false;
+    }
+
+    listarAnimais(){
+        for(const animal of this.#animais){
+            console.log(animal.getNome() + ' ' + animal.getEspecie());
+        }
     }
 }
+
+module.exports = Cliente;
