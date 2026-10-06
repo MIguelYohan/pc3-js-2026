@@ -1,6 +1,13 @@
-import { validarEmail } from '../biblioteca/utils.js';
+function validarEmail(email){
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-export class Pessoa {
+    if(typeof email == 'string' && emailRegex.test(email)){
+        return true;
+    }
+    return false;
+}
+
+class Pessoa {
     #email;
     #nome;
 
@@ -28,3 +35,5 @@ export class Pessoa {
         return this.#nome;
     }
 }
+
+module.exports = Pessoa;

@@ -1,4 +1,4 @@
-export function validarEmail(email){
+function validarEmail(email){
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if(typeof email == 'string' && emailRegex.test(email)){
@@ -7,7 +7,7 @@ export function validarEmail(email){
     return false;
 }
 
-export function validarEmailProfessor(email){
+function validarEmailProfessor(email){
     const emailRegex = /^[\w.-]+@[^.]+\.edu\.br$/;
 
     if(typeof email == 'string' && emailRegex.test(email)){
@@ -15,8 +15,7 @@ export function validarEmailProfessor(email){
     }
     return false;
 }
-
-export function validarMatricula(matricula){
+function validarMatricula(matricula){
     const matriculaRegex = /^[a-zA-Z0-9]+$/;
 
     if(typeof matricula == 'string' && matriculaRegex.test(matricula)){
@@ -25,3 +24,12 @@ export function validarMatricula(matricula){
     return false;
 }
 
+function mostrarDados(obj) {
+    let relatorio = `Nome: ${obj.getNome()} | Email: ${obj.getEmail()}`;
+    if (typeof obj.getMatricula === 'function') {
+        relatorio += ` | Matricula: ${obj.getMatricula()}`;
+    }
+    console.log(relatorio);
+}
+
+module.exports = { validarEmail, validarEmailProfessor, validarMatricula, mostrarDados};

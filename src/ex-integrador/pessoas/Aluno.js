@@ -1,7 +1,7 @@
-import { Pessoa } from './Pessoa.js';
-import { validarMatricula } from '../biblioteca/utils.js';
+const Pessoa = require('./Pessoa.js');
+const { validarMatricula } = require('../biblioteca/utils.js');
 
-export class Aluno extends Pessoa {
+class Aluno extends Pessoa {
     #matricula;
 
     setMatricula(matricula){
@@ -17,3 +17,4 @@ export class Aluno extends Pessoa {
     }
 }
 
+module.exports = Aluno;
